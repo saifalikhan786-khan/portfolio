@@ -1,0 +1,427 @@
+{
+  "meta": {
+    "sources": [
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/saif-ali-khan-913168173",
+        "scraped_at": "2026-06-23"
+      },
+      {
+        "type": "resume",
+        "file": "SAIF_ALI_KHAN_CV_Resume - old resume.pdf",
+        "note": "Older resume used to fill contact info and detailed experience bullets"
+      }
+    ],
+    "purpose": "Portfolio generation input data",
+    "data_notes": "Current role and dates prefer LinkedIn (newer). Resume provides contact details, bullet-point responsibilities, and additional certifications. Resume lists IonIdea through May 2024+; LinkedIn shows transition to Dynatrace direct employment Feb 2026."
+  },
+  "personal": {
+    "full_name": "Saif Ali Khan",
+    "headline": "Platform Product Specialist II @ Dynatrace | Dynatrace 6x Certified / AI Enthusiast | Observability / Technology Enthusiast",
+    "alternate_title": "Technical Product Specialist (Level 2)",
+    "location": {
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "country": "India",
+      "formatted": "Bengaluru, Karnataka, India",
+      "permanent_address": "Maddur, Karnataka 571428, India"
+    },
+    "contact": {
+      "email": "saifallikhan560@gmail.com",
+      "phone": "+91 8660924001",
+      "linkedin": "https://www.linkedin.com/in/saif-ali-khan-913168173"
+    },
+    "connections": 500,
+    "followers": 920,
+    "total_experience": "4 years and 1 month"
+  },
+  "about": {
+    "summary": "Detail-oriented technical product specialist skilled in Dynatrace implementations and collaborative problem-solving. Experience includes providing technical guidance across diverse platforms, enhancing application performance monitoring, and delivering actionable insights to drive customer success. Software engineer specializing in APM (Application Performance Monitoring) and observability. Passionate about platform product management, AI, and technology.",
+    "linkedin_raw": "software engineer APM",
+    "resume_summary": "Detail-oriented technical product specialist skilled in Dynatrace implementations and collaborative problem-solving. Experience includes providing technical guidance across diverse platforms, enhancing application performance monitoring, and delivering actionable insights to drive customer success."
+  },
+  "experience": [
+    {
+      "title": "Platform Product Specialist II",
+      "company": "Dynatrace",
+      "company_url": "https://www.linkedin.com/company/dynatrace",
+      "employment_type": "Full-time",
+      "location": "Bengaluru, Karnataka, India",
+      "start_date": "2026-02",
+      "end_date": null,
+      "is_current": true,
+      "duration": "2 months (as of scrape date)",
+      "department": "Product",
+      "level": "Specialist",
+      "description": "Working on AI-powered observability platform solutions including infrastructure observability, application observability, digital experience, log analytics, application security, threat observability, software delivery, and business analytics.",
+      "responsibilities": [],
+      "source": "linkedin"
+    },
+    {
+      "title": "Technical Product Specialist (Level 2)",
+      "company": "IonIdea",
+      "company_url": "https://www.linkedin.com/company/ionidea",
+      "employment_type": "Full-time",
+      "location": "Bangalore, Karnataka, India",
+      "start_date": "2024-05",
+      "end_date": "2026-02",
+      "is_current": false,
+      "duration": "Approx. 1 year 9 months",
+      "level": "Level 2",
+      "description": "Technical Product Specialist role supporting Dynatrace customers via IonIdea.",
+      "responsibilities": [
+        "Utilized Zendesk expertise to deliver customer value on Dynatrace product topics including Kubernetes, AWS, Cloud, OneAgent, ActiveGate, DEM, SaaS gen3, and Managed.",
+        "Collaborated with cross-functional teams to enhance customer support.",
+        "Recommended installation of OneAgent, ActiveGate, and DEM, along with configuration changes across platforms and technologies, ensuring adherence to best practices.",
+        "Provided proactive support to customers regarding upcoming outages and failures."
+      ],
+      "source": "resume",
+      "note": "Role not separately listed on LinkedIn; merged between Software Engineer-APM and Dynatrace direct hire"
+    },
+    {
+      "title": "Software Engineer - APM (Dynatrace ACE Consultant)",
+      "company": "IonIdea",
+      "company_url": "https://www.linkedin.com/company/ionidea",
+      "employment_type": "Full-time",
+      "location": "Bangalore, Karnataka, India",
+      "start_date": "2022-05",
+      "end_date": "2024-05",
+      "is_current": false,
+      "duration": "2 years",
+      "department": "Engineering and Technical",
+      "level": "Specialist",
+      "description": "Software Engineer focused on Application Performance Monitoring using Dynatrace as an ACE Consultant.",
+      "responsibilities": [
+        "Delivered technical guidance to customers for installation, operation, and maintenance processes.",
+        "Collaborated with engineers and cross-functional teams for comprehensive application monitoring.",
+        "Conducted monitoring analysis and participated in major incident calls with stakeholders.",
+        "Generated monthly reports on problem trends and DDU consumption, facilitating informed service management decisions.",
+        "Produced utilization reports and problem analysis documents, enhancing visibility into DEM unit performance.",
+        "Authored installation documentation for OneAgent across various operating systems.",
+        "Provided detailed error reports to customers following system failures.",
+        "Managed critical customer calls during outages, providing actionable best practices for rapid resolution."
+      ],
+      "source": "linkedin_and_resume"
+    },
+    {
+      "title": "Intern",
+      "company": "IonIdea",
+      "company_url": "https://www.linkedin.com/company/ionidea",
+      "employment_type": "Internship",
+      "location": "Bangalore, Karnataka, India",
+      "start_date": "2022-02",
+      "end_date": "2022-04",
+      "is_current": false,
+      "duration": "2 months",
+      "department": "Other",
+      "level": "Intern",
+      "description": "Internship role at IonIdea, beginning career in Dynatrace and observability.",
+      "responsibilities": [
+        "Implemented the Dynatrace solution to enhance monitoring of application performance and user experience across diverse environments.",
+        "Assisted the team in developing project plans and timelines for client initiatives.",
+        "Conducted research to support strategic decision-making and project proposals.",
+        "Collaborated with cross-functional teams to gather requirements and implement solutions."
+      ],
+      "source": "linkedin_and_resume"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering (BE)",
+      "field_of_study": "Electronics and Communication Engineering",
+      "institution": "Ghousia College of Engineering",
+      "location": "Ramanagaram, Karnataka, India",
+      "affiliated_university": "Visvesvaraya Technological University",
+      "start_date": "2015-06",
+      "end_date": "2019-06",
+      "start_year": 2015,
+      "end_year": 2019,
+      "duration_years": 4,
+      "activities": "Electronics & Communication Engineering",
+      "source": "linkedin_and_resume"
+    },
+    {
+      "degree": "Science PUC (PCMB)",
+      "field_of_study": "Physics, Chemistry, Mathematics, Biology",
+      "institution": "Bharathi Composite PU College",
+      "start_year": 2013,
+      "end_year": 2015,
+      "duration_years": 2,
+      "source": "linkedin"
+    },
+    {
+      "degree": "SSLC (High School)",
+      "field_of_study": null,
+      "institution": "Vijaya Vidya Samasthe",
+      "start_year": 2012,
+      "end_year": 2013,
+      "duration_years": 1,
+      "activities": "High school",
+      "source": "linkedin"
+    }
+  ],
+  "certifications": {
+    "dynatrace": [
+      {
+        "name": "Dynatrace 6x Certified",
+        "category": "Dynatrace",
+        "notes": "Includes Implementation Professional, Associate, Essentials, Sales, and Sales Specialist certifications"
+      },
+      {
+        "name": "Dynatrace Implementation Professional",
+        "issuer": "Dynatrace",
+        "issued_date": null,
+        "source": "linkedin"
+      },
+      {
+        "name": "Dynatrace Implementation and Administration Certified",
+        "issuer": "Dynatrace",
+        "notes": "Dynatrace Associate, Essentials, Sales, Sales Specialist certified",
+        "source": "resume"
+      },
+      {
+        "name": "Dynatrace Associate",
+        "issuer": "Dynatrace",
+        "issued_date": "2022-06",
+        "expiry_date": "2024-06",
+        "credential_url": "https://credly.com/badges/a9e31348-4e81-4019-8ebb-561798a5961e",
+        "source": "linkedin"
+      }
+    ],
+    "industry": [
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "source": "resume"
+      },
+      {
+        "name": "Anthropic Claude Certified Architect – Foundations (CCA-F)",
+        "issuer": "Anthropic",
+        "source": "linkedin_and_resume",
+        "notes": "Among first group of professionals to achieve this certification"
+      },
+      {
+        "name": "Oracle Cloud, Database, AI Professional",
+        "issuer": "Oracle",
+        "source": "resume"
+      },
+      {
+        "name": "Nutanix Hybrid Cloud Fundamentals",
+        "issuer": "Nutanix",
+        "source": "resume"
+      },
+      {
+        "name": "Astronomer Certification for Apache Airflow DAG Authoring",
+        "issuer": "Astronomer",
+        "source": "linkedin"
+      }
+    ],
+    "cybersecurity": [
+      {
+        "name": "Fortinet Cybersecurity Certified Associate",
+        "issuer": "Fortinet",
+        "source": "resume"
+      },
+      {
+        "name": "Databricks Fundamentals",
+        "issuer": "Databricks",
+        "source": "resume"
+      }
+    ],
+    "other": [
+      {
+        "name": "Become a Software Developer",
+        "issuer": "LinkedIn Learning",
+        "issued_date": "2022-06",
+        "credential_url": "https://linkedin.com/learning/certificates/8b825ee37f12db009dd136247b8517e2378df79edccbad9c7c1e5b8699bf6325",
+        "source": "linkedin"
+      },
+      {
+        "name": "Introduction to IoT",
+        "issuer": "Cisco Networking Academy",
+        "issued_date": "2020-06",
+        "source": "linkedin"
+      },
+      {
+        "name": "Java Basics",
+        "issuer": "HackerRank",
+        "issued_date": "2020-06",
+        "credential_url": "https://hackerrank.com/certificates/9ee0b67d19e8",
+        "source": "linkedin"
+      },
+      {
+        "name": "Step into Robotic Process Automation",
+        "issuer": "GUVI Geek Networks, IITM Research Park",
+        "issued_date": "2020-06",
+        "source": "linkedin"
+      },
+      {
+        "name": "Start-up India Learning Program",
+        "issuer": "Invest India",
+        "issued_date": "2020-05",
+        "source": "linkedin"
+      },
+      {
+        "name": "Digital Marketing",
+        "issuer": "Accenture",
+        "issued_date": "2020-04",
+        "source": "linkedin"
+      },
+      {
+        "name": "Ethical Hacking & Penetration Testing",
+        "issuer": "Eduonix Learning Solutions",
+        "issued_date": "2020-02",
+        "source": "linkedin"
+      },
+      {
+        "name": "Fundamentals of Digital Marketing",
+        "issuer": "Google Digital Garage",
+        "issued_date": "2020-02",
+        "credential_url": "https://learndigital.withgoogle.com/digitalgarage",
+        "source": "linkedin"
+      },
+      {
+        "name": "Advanced Google Analytics",
+        "issuer": "Google Analytics Academy",
+        "issued_date": "2020-05",
+        "expiry_date": "2023-05",
+        "source": "linkedin"
+      }
+    ]
+  },
+  "skills": {
+    "technical": [
+      "Dynatrace Observability Implementation",
+      "Application Performance Monitoring (APM)",
+      "Configuration Management",
+      "Java",
+      "Python",
+      "Kubernetes",
+      "AWS",
+      "Oracle Database",
+      "Apache Airflow",
+      "Data Engineering",
+      "Workflow Orchestration",
+      "IoT",
+      "OneAgent",
+      "ActiveGate",
+      "DEM (Digital Experience Monitoring)",
+      "Zendesk"
+    ],
+    "professional": [
+      "Product Specialist",
+      "Platform Product Management",
+      "Platform Management",
+      "Software Engineering",
+      "Problem Analysis & Troubleshooting",
+      "Analytical and Critical Thinking",
+      "Customer Relationship Management",
+      "Customer Support",
+      "Customer-focused Problem-solving",
+      "Observability",
+      "AI / Generative AI",
+      "Agentic AI"
+    ]
+  },
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Professional working proficiency"
+    },
+    {
+      "language": "Kannada",
+      "proficiency": "Native or bilingual proficiency"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "Native or bilingual proficiency"
+    },
+    {
+      "language": "Urdu",
+      "proficiency": "Native or bilingual proficiency"
+    }
+  ],
+  "projects": [
+    {
+      "title": "IoT Based Intelligent Vehicle Accident Prevention using Eye Blink Sensor",
+      "type": "Final Year Project",
+      "description": "Intelligent vehicle accident prevention system using eye blink sensor for driver fatigue detection.",
+      "technologies": ["IoT", "Eye Blink Sensor", "Embedded Systems"],
+      "source": "linkedin"
+    },
+    {
+      "title": "Automatic Water Distribution System",
+      "type": "Internship Project",
+      "description": "Industrial automation project using PLC & SCADA for automatic water distribution.",
+      "technologies": ["PLC", "SCADA", "Industrial Automation"],
+      "source": "linkedin"
+    }
+  ],
+  "organizations": [
+    {
+      "role": "Student Coordinator",
+      "organization": "Workshop on Mobile Making & IoT",
+      "organized_by": "IIT Mumbai",
+      "source": "linkedin"
+    }
+  ],
+  "career_highlights": [
+    "Started at Dynatrace ecosystem as an intern and grew into Platform Product Specialist II over 4+ years",
+    "Dynatrace 6x Certified professional",
+    "Transitioned from Software Engineer-APM at IonIdea to Technical Product Specialist, then to direct Dynatrace employment",
+    "Active in observability, platform product, generative AI, and agentic AI domains",
+    "Experienced in major incident management, customer-facing technical support, and Dynatrace platform implementations"
+  ],
+  "recent_activity_summary": [
+    {
+      "type": "post",
+      "topic": "Career Journey",
+      "summary": "Reflected on 4-year journey in observability at Dynatrace, from intern to deeper platform expertise. Grateful for mentors and continuous learning.",
+      "hashtags": ["Dynatrace", "Observability", "CareerJourney", "LearningNeverStops", "Growth", "dynatracelife", "productspecalist", "platformObservability", "generativeAI", "AgenticAI"]
+    },
+    {
+      "type": "post",
+      "topic": "Dynatrace Implementation Professional Certification",
+      "summary": "Successfully cleared Dynatrace Implementation Professional Certification as a Product Specialist."
+    },
+    {
+      "type": "post",
+      "topic": "Claude Certified Architect – Foundations",
+      "summary": "Achieved CCA-F certification from Anthropic Claude; deep dive into architecting with advanced AI systems."
+    },
+    {
+      "type": "post",
+      "topic": "Apache Airflow Certification",
+      "summary": "Cleared Astronomer Certification for Apache Airflow DAG Authoring for scalable data pipeline orchestration."
+    }
+  ],
+  "portfolio_suggestions": {
+    "professional_title": "Platform Product Specialist | Observability & APM Expert",
+    "tagline": "Dynatrace 6x Certified | AI Enthusiast | Building smarter observability solutions",
+    "key_themes": [
+      "Application Performance Monitoring (APM)",
+      "Platform Observability",
+      "Dynatrace Ecosystem",
+      "AI & Agentic AI",
+      "Cloud & Kubernetes",
+      "Customer Success & Technical Support"
+    ],
+    "suggested_sections": [
+      "Hero / Introduction",
+      "About Me",
+      "Experience Timeline",
+      "Education",
+      "Certifications & Badges",
+      "Skills & Technologies",
+      "Projects",
+      "Languages",
+      "Contact / Social Links"
+    ],
+    "contact_for_portfolio": {
+      "email": "saifallikhan560@gmail.com",
+      "phone": "+91 8660924001",
+      "linkedin": "https://www.linkedin.com/in/saif-ali-khan-913168173",
+      "location": "Bengaluru, Karnataka, India"
+    }
+  }
+}
