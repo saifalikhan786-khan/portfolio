@@ -3,6 +3,7 @@ import { AlertCircle } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { AdminLayout } from '../components/admin/AdminLayout'
 import { MessageTable } from '../components/admin/MessageTable'
+import { LogsPanel } from '../components/admin/LogsPanel'
 import { UserManagement } from '../components/admin/UserManagement'
 import {
   createAdminUser,
@@ -22,14 +23,18 @@ import {
   type AdminUser,
 } from '../lib/auth'
 import type { ContactMessageRow } from '../lib/supabase'
+import { fetchAdminActionLogs, fetchVisitorLogs, type AdminActionLog, type VisitorLog } from '../lib/logs'
 
 export default function AdminDashboard() {
   const navigate = useNavigate()
   const [user, setUser] = useState<AdminUser | null>(null)
   const [messages, setMessages] = useState<ContactMessageRow[]>([])
   const [users, setUsers] = useState<AdminUser[]>([])
+  const [visitorLogs, setVisitorLogs] = useState<VisitorLog[]>([])
+  const [actionLogs, setActionLogs] = useState<AdminActionLog[]>([])
   const [loadingMessages, setLoadingMessages] = useState(true)
   const [loadingUsers, setLoadingUsers] = useState(false)
+  const [loadingLogs, setLoadingLogs] = useState(false)
   const [error, setError] = useState('')
   const [initDone, setInitDone] = useState(false)
 
@@ -63,6 +68,23 @@ export default function AdminDashboard() {
     }
   }, [token, user])
 
+  const loadLogs = useCallback(async () => {
+    if (!token || !user || !isSuperAdmin(user)) return
+    setLoadingLogs(true)
+    try {
+      const [visitors, actions] = await Promise.all([
+        fetchVisitorLogs(token),
+        fetchAdminActionLogs(token),
+      ])
+      setVisitorLogs(visitors)
+      setActionLogs(actions)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load logs')
+    } finally {
+      setLoadingLogs(false)
+    }
+  }, [token, user])
+
   useEffect(() => {
     async function init() {
       if (!token) {
@@ -91,6 +113,10 @@ export default function AdminDashboard() {
   useEffect(() => {
     if (user && isSuperAdmin(user)) loadUsers()
   }, [user, loadUsers])
+
+  useEffect(() => {
+    if (user && isSuperAdmin(user)) loadLogs()
+  }, [user, loadLogs])
 
   const handleLogout = async () => {
     if (token) {
@@ -160,15 +186,23 @@ export default function AdminDashboard() {
         />
 
         {isSuperAdmin(user) && (
-          <UserManagement
-            users={users}
-            currentUserId={user.id}
-            loading={loadingUsers}
-            onRefresh={loadUsers}
-            onCreate={handleCreateUser}
-            onUpdate={handleUpdateUser}
-            onDelete={handleDeleteUser}
-          />
+          <>
+            <UserManagement
+              users={users}
+              currentUserId={user.id}
+              loading={loadingUsers}
+              onRefresh={loadUsers}
+              onCreate={handleCreateUser}
+              onUpdate={handleUpdateUser}
+              onDelete={handleDeleteUser}
+            />
+            <LogsPanel
+              visitorLogs={visitorLogs}
+              actionLogs={actionLogs}
+              loading={loadingLogs}
+              onRefresh={loadLogs}
+            />
+          </>
         )}
       </div>
     </AdminLayout>

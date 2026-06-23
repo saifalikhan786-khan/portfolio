@@ -30,6 +30,7 @@ Provide these **2 values** from your Supabase project:
 2. Go to **SQL Editor** → **New query**
 3. Run [`supabase/setup.sql`](./supabase/setup.sql) — Quick Message table
 4. Run [`supabase/admin.sql`](./supabase/admin.sql) — Admin users, auth, and dashboard RPCs
+5. Run [`supabase/logs.sql`](./supabase/logs.sql) — Visitor tracking & admin action audit logs
 
 > **Login error `function crypt(text, text) does not exist`?**  
 > Run [`supabase/admin-fix-pgcrypto.sql`](./supabase/admin-fix-pgcrypto.sql) in the SQL Editor. Supabase stores `pgcrypto` in the `extensions` schema.

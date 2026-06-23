@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { Header } from './components/layout/Header'
 import { Sidebar } from './components/layout/Sidebar'
 import { ContactSection } from './components/sections/ContactSection'
@@ -9,6 +9,7 @@ import { CommandPaletteHint, NetworkBackground } from './components/ui/NetworkBa
 import { GlowOrb } from './components/ui/MetricCard'
 import { navItems, type SectionId } from './data/profile'
 import { useActiveSection } from './hooks/useActiveSection'
+import { trackPortfolioVisit } from './lib/visitor'
 
 const OverviewSection = lazy(() =>
   import('./components/sections/OverviewSection').then((m) => ({ default: m.OverviewSection })),
@@ -38,6 +39,10 @@ function App() {
 
   const handleNavigate = useCallback((id: SectionId) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }, [])
+
+  useEffect(() => {
+    trackPortfolioVisit()
   }, [])
 
   return (
