@@ -57,20 +57,22 @@ git push -u origin main
 1. Go to your repository on GitHub
 2. Navigate to **Settings** → **Pages**
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**
-4. The workflow in `.github/workflows/deploy.yml` will automatically build and deploy on every push to `main`
+4. The workflow in `.github/workflows/deploy.yml` deploys automatically on every push to the **`Deploy`** branch
 
-### Step 3: Update Base Path (if needed)
+### Step 3: Add GitHub Secrets (Supabase)
 
-If your repository is **not** named `Portfolio`, update the `base` path in `vite.config.ts`:
+In your repo → **Settings** → **Secrets and variables** → **Actions**, add:
 
-```ts
-base: process.env.GITHUB_PAGES === 'true' ? '/YOUR_REPO_NAME/' : '/',
-```
+| Secret | Value |
+|--------|-------|
+| `VITE_SUPABASE_URL` | Your Supabase Project URL |
+| `VITE_SUPABASE_ANON_KEY` | Your Supabase anon public key |
 
-For a user/organization site (`username.github.io`), use:
+### Step 4: Deploy
 
-```ts
-base: '/',
+```bash
+git checkout -B Deploy
+git push -u origin Deploy
 ```
 
 ### Live URL
@@ -78,8 +80,10 @@ base: '/',
 After deployment, your site will be available at:
 
 ```
-https://YOUR_USERNAME.github.io/Portfolio/
+https://saifalikhan786-khan.github.io/portfolio/
 ```
+
+Admin panel: `https://saifalikhan786-khan.github.io/portfolio/#/admin`
 
 ## Project Structure
 

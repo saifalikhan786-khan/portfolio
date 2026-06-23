@@ -1,17 +1,55 @@
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Copy, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { AlertCircle, Check, CheckCircle2, Copy, Linkedin, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { profile } from '../../data/profile'
+import { isSupabaseConfigured, submitContactMessage } from '../../lib/supabase'
 import { SectionHeader } from '../ui/MetricCard'
 import { Avatar } from '../ui/Avatar'
 
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
+
 export function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const copyToClipboard = async (text: string, field: string) => {
     await navigator.clipboard.writeText(text)
     setCopied(field)
     setTimeout(() => setCopied(null), 2000)
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const name = String(data.get('name') ?? '')
+    const email = String(data.get('email') ?? '')
+    const message = String(data.get('message') ?? '')
+
+    if (!isSupabaseConfigured) {
+      setSubmitStatus('error')
+      setErrorMessage('Message service is not configured yet. Please use email or LinkedIn to connect.')
+      return
+    }
+
+    setSubmitStatus('loading')
+    setErrorMessage('')
+
+    try {
+      await submitContactMessage({
+        name,
+        email: email || undefined,
+        message,
+      })
+      setSubmitStatus('success')
+      form.reset()
+    } catch (err) {
+      setSubmitStatus('error')
+      setErrorMessage(
+        err instanceof Error ? err.message : 'Failed to send message. Please try again.',
+      )
+    }
   }
 
   const contactItems = [
@@ -132,41 +170,76 @@ export function ContactSection() {
           transition={{ delay: 0.1 }}
           className="glass-card rounded-xl p-6 border border-obs-border flex flex-col"
         >
-          <h3 className="text-sm font-semibold mb-4">Quick Message</h3>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              const form = e.target as HTMLFormElement
-              const data = new FormData(form)
-              const subject = encodeURIComponent('Portfolio Inquiry')
-              const body = encodeURIComponent(
-                `Hi Saif,\n\n${data.get('message')}\n\n— ${data.get('name')}`,
-              )
-              window.location.href = `mailto:${profile.personal.email}?subject=${subject}&body=${body}`
-            }}
-            className="flex flex-col gap-4 flex-1"
-          >
+          <h3 className="text-sm font-semibold mb-1">Quick Message</h3>
+          <p className="text-xs text-obs-muted mb-4">
+            Messages are saved securely to the database and delivered to Saif.
+          </p>
+
+          {submitStatus === 'success' && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 flex items-start gap-2 p-3 rounded-lg bg-obs-teal/10 border border-obs-teal/30 text-obs-teal text-sm"
+            >
+              <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>Message sent successfully! I&apos;ll get back to you soon.</span>
+            </motion.div>
+          )}
+
+          {submitStatus === 'error' && errorMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 flex items-start gap-2 p-3 rounded-lg bg-obs-rose/10 border border-obs-rose/30 text-obs-rose text-sm"
+            >
+              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>{errorMessage}</span>
+            </motion.div>
+          )}
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
             <input
               name="name"
               required
+              minLength={2}
+              disabled={submitStatus === 'loading'}
               placeholder="Your name"
-              className="w-full px-4 py-3 rounded-lg bg-obs-surface border border-obs-border text-obs-text text-sm placeholder:text-obs-muted focus:outline-none focus:border-obs-cyan/50 transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-obs-surface border border-obs-border text-obs-text text-sm placeholder:text-obs-muted focus:outline-none focus:border-obs-cyan/50 transition-colors disabled:opacity-60"
+            />
+            <input
+              name="email"
+              type="email"
+              disabled={submitStatus === 'loading'}
+              placeholder="Your email (optional)"
+              className="w-full px-4 py-3 rounded-lg bg-obs-surface border border-obs-border text-obs-text text-sm placeholder:text-obs-muted focus:outline-none focus:border-obs-cyan/50 transition-colors disabled:opacity-60"
             />
             <textarea
               name="message"
               required
+              minLength={10}
               rows={5}
+              disabled={submitStatus === 'loading'}
               placeholder="Your message..."
-              className="w-full px-4 py-3 rounded-lg bg-obs-surface border border-obs-border text-obs-text text-sm placeholder:text-obs-muted focus:outline-none focus:border-obs-cyan/50 transition-colors resize-none flex-1"
+              className="w-full px-4 py-3 rounded-lg bg-obs-surface border border-obs-border text-obs-text text-sm placeholder:text-obs-muted focus:outline-none focus:border-obs-cyan/50 transition-colors resize-none flex-1 disabled:opacity-60"
             />
             <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={submitStatus !== 'loading' ? { scale: 1.02 } : undefined}
+              whileTap={submitStatus !== 'loading' ? { scale: 0.98 } : undefined}
               type="submit"
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-obs-cyan to-obs-teal text-obs-bg font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+              disabled={submitStatus === 'loading'}
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-obs-cyan to-obs-teal text-obs-bg font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <Send className="w-4 h-4" />
-              Send via Email
+              {submitStatus === 'loading' ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Send Message
+                </>
+              )}
             </motion.button>
           </form>
         </motion.div>
