@@ -50,10 +50,11 @@ export const profile = {
   personal: {
     fullName: 'Saif Ali Khan',
     headline:
-      'Platform Product Specialist II @ Dynatrace | Dynatrace 6x Certified / AI Enthusiast',
-    title: 'Platform Product Specialist | Observability & APM Expert',
+      'Platform Product Support Engineer II @ Dynatrace | Dynatrace 10x Certified / AI Enthusiast',
+    title: 'Platform Product Support Engineer | Observability & APM Expert',
     tagline:
-      'Dynatrace 6x Certified | AI Enthusiast | Building smarter observability solutions',
+      'Dynatrace 10x Certified | AI Enthusiast | Building smarter observability solutions',
+    avatar: 'image_user.png',
     location: 'Bengaluru, Karnataka, India',
     email: 'saifallikhan560@gmail.com',
     phone: '+91 8660924001',
@@ -68,17 +69,31 @@ export const profile = {
   },
   experience: [
     {
-      title: 'Platform Product Specialist II',
+      title: 'Platform Product Support Engineer II',
       company: 'Dynatrace',
       companyUrl: 'https://www.linkedin.com/company/dynatrace',
       employmentType: 'Full-time',
-      location: 'Bengaluru, Karnataka, India',
-      startDate: '2026-02',
+      location: 'Bengaluru, Karnataka, India · On-site',
+      startDate: '2026-06',
       endDate: null,
       isCurrent: true,
       duration: 'Current',
       description:
         'Working on AI-powered observability platform solutions including infrastructure observability, application observability, digital experience, log analytics, application security, threat observability, software delivery, and business analytics.',
+      responsibilities: [],
+    },
+    {
+      title: 'Platform Product Specialist II',
+      company: 'Dynatrace',
+      companyUrl: 'https://www.linkedin.com/company/dynatrace',
+      employmentType: 'Full-time',
+      location: 'Bengaluru, Karnataka, India · On-site',
+      startDate: '2026-02',
+      endDate: '2026-06',
+      isCurrent: false,
+      duration: '5 mos',
+      description:
+        'Platform Product Specialist role focused on Dynatrace observability platform support, customer enablement, and product expertise across infrastructure and application monitoring.',
       responsibilities: [],
     },
     {
@@ -169,7 +184,7 @@ export const profile = {
   ] satisfies Education[],
   certifications: [
     {
-      name: 'Dynatrace 6x Certified',
+      name: 'Dynatrace 10x Certified',
       category: 'Dynatrace',
       notes: 'Implementation Professional, Associate, Essentials, Sales & Sales Specialist',
     },
@@ -280,8 +295,8 @@ export const profile = {
     },
   ] satisfies Project[],
   careerHighlights: [
-    'Grew from intern to Platform Product Specialist II over 4+ years in the Dynatrace ecosystem',
-    'Dynatrace 6x Certified professional with Implementation Professional credential',
+    'Grew from intern to Platform Product Support Engineer II over 4+ years in the Dynatrace ecosystem',
+    'Dynatrace 10x Certified professional with Implementation Professional credential',
     'Transitioned from IonIdea to direct Dynatrace employment',
     'Active in observability, platform product, generative AI, and agentic AI domains',
     'Experienced in major incident management and customer-facing technical support',

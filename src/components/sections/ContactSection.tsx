@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Check, Copy, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { profile } from '../../data/profile'
 import { SectionHeader } from '../ui/MetricCard'
+import { Avatar } from '../ui/Avatar'
 
 export function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null)
@@ -62,10 +63,15 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="glass-card rounded-xl p-6 border border-obs-border glow-cyan"
         >
-          <h3 className="text-lg font-semibold text-obs-text mb-1">
-            {profile.personal.fullName}
-          </h3>
-          <p className="text-sm text-obs-muted mb-6">{profile.personal.headline}</p>
+          <div className="flex items-center gap-4 mb-6">
+            <Avatar size="lg" />
+            <div>
+              <h3 className="text-lg font-semibold text-obs-text">
+                {profile.personal.fullName}
+              </h3>
+              <p className="text-sm text-obs-muted">{profile.personal.headline}</p>
+            </div>
+          </div>
 
           <div className="space-y-3">
             {contactItems.map((item, i) => {

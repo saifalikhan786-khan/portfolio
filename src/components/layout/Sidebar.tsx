@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { navItems, profile, type SectionId } from '../../data/profile'
 import { useClock } from '../../hooks/useActiveSection'
+import { Avatar } from '../ui/Avatar'
 
 const iconMap = {
   'layout-dashboard': LayoutDashboard,
@@ -43,9 +44,7 @@ export function Sidebar({ activeSection, mobileOpen, onMobileToggle, onNavigate 
     <>
       <div className="p-5 border-b border-obs-border">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-obs-cyan to-obs-teal flex items-center justify-center font-bold text-obs-bg text-sm">
-            SK
-          </div>
+          <Avatar size="sm" />
           <div className="min-w-0">
             <p className="font-semibold text-sm truncate">{profile.personal.fullName}</p>
             <p className="text-xs text-obs-muted truncate">Observability Console</p>

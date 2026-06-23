@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import { profile } from '../../data/profile'
 import { MetricCard, SectionHeader } from '../ui/MetricCard'
+import { Avatar } from '../ui/Avatar'
 
 const activityData = [
   { month: 'Feb', value: 20 },
@@ -43,6 +44,19 @@ export function OverviewSection() {
         icon={<LayoutDashboard className="w-5 h-5" />}
       />
 
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="glass-card rounded-xl p-5 border border-obs-border mb-6 flex flex-col sm:flex-row items-center gap-5"
+      >
+        <Avatar size="xl" />
+        <div className="text-center sm:text-left">
+          <h2 className="text-xl font-bold text-obs-text">{profile.personal.fullName}</h2>
+          <p className="text-sm text-obs-cyan mt-1">{profile.personal.title}</p>
+          <p className="text-sm text-obs-muted mt-2 max-w-xl">{profile.personal.tagline}</p>
+        </div>
+      </motion.div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
         <MetricCard
           label="Years Experience"
@@ -57,7 +71,7 @@ export function OverviewSection() {
           label="Certifications"
           value={profile.metrics.certifications}
           icon={<Award className="w-5 h-5" />}
-          trend="6x Dynatrace"
+          trend="10x Dynatrace"
           color="teal"
           delay={0.1}
         />
