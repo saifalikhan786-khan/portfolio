@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-obs-bg: #060a12;
+  --color-obs-surface: #0d1424;
+  --color-obs-card: #111b2e;
+  --color-obs-border: #1e2d4a;
+  --color-obs-muted: #7b8ba8;
+  --color-obs-text: #e8edf5;
+  --color-obs-cyan: #00d4ff;
+  --color-obs-teal: #00e5a0;
+  --color-obs-purple: #8b5cf6;
+  --color-obs-amber: #fbbf24;
+  --color-obs-rose: #f43f5e;
+  --color-obs-blue: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: var(--color-obs-bg);
+  color: var(--color-obs-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-obs-cyan) 35%, transparent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obs-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-obs-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-obs-muted);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-obs-card) 90%, white 2%) 0%,
+    color-mix(in srgb, var(--color-obs-surface) 95%, transparent) 100%
+  );
+  border: 1px solid var(--color-obs-border);
+  backdrop-filter: blur(12px);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--color-obs-cyan) 15%, transparent);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-obs-border) 40%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-obs-border) 40%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.status-pulse {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scan-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    transparent 0%,
+    color-mix(in srgb, var(--color-obs-cyan) 3%, transparent) 50%,
+    transparent 100%
+  );
+  height: 120px;
+  animation: scan-line 8s linear infinite;
+  opacity: 0.4;
+  z-index: 0;
+}
